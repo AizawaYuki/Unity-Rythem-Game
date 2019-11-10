@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: gamebackground
+    uniqueID: 437474677
+    locked: 0
+  - name: judge Lines
+    uniqueID: 4162945305
+    locked: 0
+  - name: Effects
+    uniqueID: 3353230537
+    locked: 0
+  - name: Judgement
+    uniqueID: 1648178669
+    locked: 0
+  - name: lines
+    uniqueID: 1417376117
+    locked: 0
