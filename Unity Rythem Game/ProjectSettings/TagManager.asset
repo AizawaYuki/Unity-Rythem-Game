@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Perfect Line
+  - Good Line
+  - Bad Line
+  - Miss Line
   layers:
   - Default
   - TransparentFX
@@ -41,18 +45,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: gamebackground
-    uniqueID: 437474677
+  - name: Background
+    uniqueID: 1710044283
     locked: 0
-  - name: judge Lines
-    uniqueID: 4162945305
+  - name: Judge Lines
+    uniqueID: 3830287257
     locked: 0
-  - name: Effects
-    uniqueID: 3353230537
+  - name: Notes
+    uniqueID: 1030645221
     locked: 0
   - name: Judgement
-    uniqueID: 1648178669
+    uniqueID: 253903693
     locked: 0
-  - name: lines
-    uniqueID: 1417376117
+  - name: Effects
+    uniqueID: 663746227
     locked: 0

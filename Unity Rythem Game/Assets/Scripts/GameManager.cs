@@ -12,10 +12,18 @@ public class GameManager : MonoBehaviour
     }
 
     public float noteSpeed;
+
+    /*
+     *Bad : 1
+     *Good : 2
+     *Perfect : 3 
+     *Miss : 4
+     */
    
+    public enum judges { NONE = 0, BAD, GOOD, PERFECT, MISS };
     void Start()
     {
-
+         
     }
 
     // Update is called once per frame

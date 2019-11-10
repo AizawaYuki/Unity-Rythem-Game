@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BackgroundBehaviour.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\NoteBehaviour.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Unity Rythem Game/Project/Unity-Rythem-Game/Unity Rythem Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
