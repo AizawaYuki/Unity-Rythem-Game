@@ -8,7 +8,7 @@ public class NoteController : MonoBehaviour
     class Note
     {
         public int noteType { get; set; }
-        public int order { get; set;  }
+        public int order { get; set; }
         public Note(int noteType, int order)
         {
             this.noteType = noteType;
@@ -40,7 +40,7 @@ public class NoteController : MonoBehaviour
         yield return new WaitForSeconds(order * beatInterval);
         Instantiate(Notes[noteType - 1]);
         MakeNote(note);
-    }   
+    }
     void Start()
     {
         noteObjectPooler = gameObject.GetComponent<ObjectPooler>();
@@ -52,10 +52,10 @@ public class NoteController : MonoBehaviour
         notes.Add(new Note(2, 6));
         notes.Add(new Note(3, 7));
         notes.Add(new Note(4, 8));
-        
 
-     //모든 노트를 정해진 시간에 출발하도록 설정
-     for(int i=0; i<notes.Count; i++)
+
+        //모든 노트를 정해진 시간에 출발하도록 설정
+        for (int i = 0; i < notes.Count; i++)
         {
             StartCoroutine(AwaitMakeNote(notes[i]));
         }
@@ -64,6 +64,6 @@ public class NoteController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

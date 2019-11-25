@@ -42,7 +42,7 @@ public class ObjectPooler : MonoBehaviour
         {
             GameObject obj = Instantiate(Notes[noteType - 1]);    //more 값이 트루값이기때문에 계속 생성
             poolsOfNotes[noteType - 1].Add(obj);
-            return obj; 
+            return obj;
         }
         return null;                        //메모리가 부족할 때 널값이 반환될 수 있도록 처리
     }
@@ -51,5 +51,3 @@ public class ObjectPooler : MonoBehaviour
 
     }
 }
-
-
