@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     // 음악 관련
     private AudioSource audioSource;
-    private string music = "pipi";
+    public string music = "1";
 
     //음악 실행하는 함수
     void MusicStart()
