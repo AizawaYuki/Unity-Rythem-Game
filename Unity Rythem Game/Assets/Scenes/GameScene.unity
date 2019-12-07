@@ -288,7 +288,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteSpeed: 0.12
   scoreUI: {fileID: 1484284012}
+  score: 0
   comboUI: {fileID: 2046701362}
+  maxCombo: 0
   judgeUI: {fileID: 890905463}
   trails:
   - {fileID: 142060984}

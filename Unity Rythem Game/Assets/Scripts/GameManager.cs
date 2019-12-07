@@ -15,17 +15,17 @@ public class GameManager : MonoBehaviour
     public float noteSpeed;
 
     public GameObject scoreUI;
-    private float score;
+    public float score;
     private Text scoreText;
+    
 
     public GameObject comboUI;
     private int Combo = 0;
-    private int Good = 100;
-    private int Perfect = 200;
     private Text comboText;
     private Animator comboAnimator;
+    public int maxCombo;
 
-   
+
     /*
      *Bad : 1
      *Good : 2
@@ -121,6 +121,10 @@ public class GameManager : MonoBehaviour
             comboText.text = "COMBO " + Combo.ToString();
             comboAnimator.SetTrigger("Show");
         }
+        if(maxCombo < Combo)
+        {
+            maxCombo=Combo;
+        }
     }
 
     //노트 판정
@@ -148,12 +152,12 @@ public class GameManager : MonoBehaviour
             {
                 judgementSpriteRenderer.sprite = judgeSprites[1];
 
-                score += Good + (Combo * (Good * 0.1f));
+                score += 120 + (Combo * (120 * 0.1f));
             }
             else if(judge == judges.PERFECT)
             {
                 judgementSpriteRenderer.sprite = judgeSprites[3];
-                score += Good + (Combo * (Perfect * 0.1f));
+                score += 250 + (Combo * (250 * 0.1f));
             }
         }
         showJudgement();

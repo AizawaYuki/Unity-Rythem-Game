@@ -45,7 +45,7 @@ public class NoteController : MonoBehaviour
     }
     
     //곡에 대한 정보를 집어넣을 변수
-    private string MusicTitle;                       //제목
+    private string musicTitle;                       //제목
     private string musicArtist;                      //가수
     private int bpm;                                 //BPM
     private int divider;                             
@@ -61,7 +61,7 @@ public class NoteController : MonoBehaviour
         //StringReader: 특정한 텍스트 파일을 읽어올게 할 수 있도록 제공되는 라이브러리
         StringReader reader = new StringReader(textAsset.text);
         //첫 번째 줄에 적힌 곡 이름을 읽습니다.
-        MusicTitle = reader.ReadLine();
+        musicTitle = reader.ReadLine();
         //두번째 줄에 적인 아티스트 이름을 읽어옵니다
         musicArtist = reader.ReadLine();
         //세번째 줄에 적힌 비트정보를 가져옴
@@ -104,6 +104,10 @@ public class NoteController : MonoBehaviour
 
         void GameResult()    //게임 결과 화면으로 전환을 위한 함수
         {
+            PlayerInformation.maxCombo = GameManager.instance.maxCombo;
+            PlayerInformation.score = GameManager.instance.score;
+            PlayerInformation.musicTitle = musicTitle;
+            PlayerInformation.musicArtist = musicArtist;
             SceneManager.LoadScene("GameResultScene"); 
         }
     }
