@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
+using UnityEngine.SceneManagement; //scene이 변화할 때
 
 public class NoteController : MonoBehaviour
 {
@@ -74,10 +75,13 @@ public class NoteController : MonoBehaviour
         beatInterval = 1 / beatCount;  // 144/30
         //각 비트들이 떨어지는 위치 및 시간
         string line;
-    
+
         while ((line = reader.ReadLine()) != null)
         {
-            Note note = new Note(Convert.ToInt32(line.Split(' ')[0]) + 1, Convert.ToInt32(line.Split(' ')[1]));
+            Note note = new Note(
+                Convert.ToInt32(line.Split(' ')[0]) + 1,
+                Convert.ToInt32(line.Split(' ')[1])
+            );
 
             notes.Add(note);
         }
@@ -87,6 +91,20 @@ public class NoteController : MonoBehaviour
         for (int i = 0; i < notes.Count; i++)
         {
             StartCoroutine(AwaitMakeNote(notes[i]));
+        }
+        //마지막 노트를 기준으로 게임 종료 함수를 불러옵니다.
+        StartCoroutine(AwaitGameResult(notes[notes.Count - 1].order));
+
+        IEnumerator AwaitGameResult(int order)
+        {
+            yield return new WaitForSeconds(startingPoint + order * beatInterval + 6.0f);
+            GameResult();
+            // 마지막 노트가 사라진 후 6초 뒤 결과화면으로 변화
+        }
+
+        void GameResult()    //게임 결과 화면으로 전환을 위한 함수
+        {
+            SceneManager.LoadScene("GameResultScene"); 
         }
     }
 

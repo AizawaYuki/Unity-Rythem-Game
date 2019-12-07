@@ -19,7 +19,9 @@ public class GameManager : MonoBehaviour
     private Text scoreText;
 
     public GameObject comboUI;
-    private int Combo;
+    private int Combo = 0;
+    private int Good = 100;
+    private int Perfect = 200;
     private Text comboText;
     private Animator comboAnimator;
 
@@ -43,6 +45,9 @@ public class GameManager : MonoBehaviour
     // 음악 관련
     private AudioSource audioSource;
     public string music = "1";
+
+    //자동 판정 모드 변수
+    public bool autoPerfect; // True 값일 때 자동 판정을 할 수 있도록함
 
     //음악 실행하는 함수
     void MusicStart()
@@ -127,28 +132,29 @@ public class GameManager : MonoBehaviour
         {
             judgementSpriteRenderer.sprite = judgeSprites[2];
             Combo = 0;
-            if (score >= 15) score -= 15;
+            if (score >= 15) score -= 60;
         }
         else if (judge == judges.BAD)
         {
             judgementSpriteRenderer.sprite = judgeSprites[0];
             Combo = 0;
-            if (score >= 15) score -= 5;
+            if (score >= 15) score -= 30;
         }
         else
         {
+            Combo++;
+
             if (judge == judges.GOOD)
             {
                 judgementSpriteRenderer.sprite = judgeSprites[1];
-                score += 10;
+
+                score += Good + (Combo * (Good * 0.1f));
             }
             else if(judge == judges.PERFECT)
             {
                 judgementSpriteRenderer.sprite = judgeSprites[3];
-                score += 20;
+                score += Good + (Combo * (Perfect * 0.1f));
             }
-            Combo += 1;
-            score += (float)Combo * 0.1f;
         }
         showJudgement();
 
