@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     // 음악 관련
     private AudioSource audioSource;
-    public string music = "1";
+    
 
     //자동 판정 모드 변수
     public bool autoPerfect; // True 값일 때 자동 판정을 할 수 있도록함
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     void MusicStart()
     {
         //리소스에서 비트음악 파일을 불러와 재생
-        AudioClip audioClip = Resources.Load<AudioClip>("Beats/" + music);
+        AudioClip audioClip = Resources.Load<AudioClip>("Beats/" + PlayerInformation.selectedMusic);
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = audioClip;
         audioSource.Play(); // 재생 함수

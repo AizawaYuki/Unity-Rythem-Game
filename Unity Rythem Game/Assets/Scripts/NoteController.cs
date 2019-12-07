@@ -57,7 +57,7 @@ public class NoteController : MonoBehaviour
     {
         noteObjectPooler = gameObject.GetComponent<ObjectPooler>();
         //리솟에서 비트 텍스트 파일 불러오기
-        TextAsset textAsset = Resources.Load<TextAsset>("Beats/" + GameManager.instance.music);
+        TextAsset textAsset = Resources.Load<TextAsset>("Beats/" + PlayerInformation.selectedMusic);
         //StringReader: 특정한 텍스트 파일을 읽어올게 할 수 있도록 제공되는 라이브러리
         StringReader reader = new StringReader(textAsset.text);
         //첫 번째 줄에 적힌 곡 이름을 읽습니다.

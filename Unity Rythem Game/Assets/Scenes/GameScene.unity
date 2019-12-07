@@ -297,6 +297,7 @@ MonoBehaviour:
   - {fileID: 950090245}
   - {fileID: 1191562332}
   - {fileID: 1021346389}
+  audioSource: {fileID: 0}
   music: 1
   autoPerfect: 1
 --- !u!82 &147796882
